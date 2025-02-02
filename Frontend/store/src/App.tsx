@@ -11,6 +11,7 @@ import { oktaConfig } from "./lib/oktaConfig";
 import { Security, LoginCallback } from "@okta/okta-react";
 import LoginWidget from "./Auth/LoginWidget";
 import { RouteComponentProps } from "react-router-dom";
+import { ReviewListPage } from "./layouts/ProductCheckoutPage/ReviewListPage/ReviewListPage";
 
 const oktaAuth = new OktaAuth(oktaConfig);
 
@@ -38,6 +39,7 @@ export const App = () => {
             <Route exact path="/" component={Homepage} />
             <Route exact path="/Home" component={Homepage} />
             <Route path="/search" component={SearchProductsPage} />
+            <Route path="/reviewlist/:bookId" component={ReviewListPage} />
             <Route path="/checkout/:bookId" component={ProductCheckoutPage} />
             <Route
               path="/login"
